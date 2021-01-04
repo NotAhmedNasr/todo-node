@@ -17,8 +17,9 @@ const todoSchema = new Schema({
     type: String,
     maxLength: 10
   }]
-}, { timestamps: true });
+}, { timestamps: true }); // this will automatically add create and update time stamps
 
+// make a new model using the todo schema
 const Todo = mongoose.model('Todo', todoSchema);
 
 module.exports = {

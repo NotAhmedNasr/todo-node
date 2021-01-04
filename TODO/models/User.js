@@ -25,9 +25,12 @@ const userSchema = new Schema({
   }
 });
 
+// instance method to validate the user password
 userSchema.methods.validatePassword = async function (loginPassword) {
   return await bcrypt.compare(loginPassword, this.password);
 };
+
+// make a model using the user schema
 const User = mongoose.model('User', userSchema);
 
 module.exports = {

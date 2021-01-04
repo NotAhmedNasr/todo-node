@@ -14,17 +14,13 @@ const getByUser = async function (id) {
 
 const update = async function (id, values) {
   const { title = 0, status = 0, tags = 0, user_id } = values;
-  const conditions = {_id: id, user_id: user_id},
-    newValues = {
-      title: title || title,
-      status: status || status,
-      tags: tags || tags
-    }
+  const conditions = { _id: id, user_id: user_id },
+    newValues = { title, status, tags }
   return await Todo.updateOne(conditions, newValues).exec();
 }
 
-const deleteByID = async function (id, user_id) {  
-  const conditions = {_id: id, user_id}
+const deleteByID = async function (id, user_id) {
+  const conditions = { _id: id, user_id }
   return await Todo.deleteOne(conditions).exec();
 }
 

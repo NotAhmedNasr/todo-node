@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken')
 
+// Middleware used to sign the response with the jwt token
 const signUser = async function (req, res, next) {
   const { body } = req;
   const {password, ...user} = body;
