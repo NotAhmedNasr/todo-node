@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const todoSchema = new Schema({
-  user_id: { type: Schema.Types.ObjectId, ref: 'Person' },
+  user_id: { type: Schema.Types.ObjectId, ref: 'User' },
   title: {
     type: String,
     required: true,
